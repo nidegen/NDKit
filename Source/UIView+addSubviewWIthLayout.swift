@@ -19,7 +19,6 @@ extension UIView {
   public func addSubview(withLayout layout: NDViewLayout, view: UIView) {
     let margins = self.layoutMarginsGuide
     view.translatesAutoresizingMaskIntoConstraints = false
-    view.frame = .zero
     self.addSubview(view)
     
     switch layout {
