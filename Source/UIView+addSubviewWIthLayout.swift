@@ -27,7 +27,7 @@ extension UIView {
       constraintX.isActive = true
       constraintX.priority = .defaultLow
       
-      let constraintY = self.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: -30)
+      let constraintY = view.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: -30)
       constraintY.isActive = true
       constraintY.priority = .defaultLow
       
@@ -56,19 +56,19 @@ extension UIView {
       constraintH.priority = .defaultLow
       
     default:
-      let constraintX = self.centerXAnchor.constraint(equalTo: margins.centerXAnchor)
+      let constraintX = view.centerXAnchor.constraint(equalTo: margins.centerXAnchor)
       constraintX.isActive = true
       constraintX.priority = .defaultLow
       
-      let constraintY = self.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: -30)
+      let constraintY = view.bottomAnchor.constraint(equalTo: margins.bottomAnchor, constant: -30)
       constraintY.isActive = true
       constraintY.priority = .defaultLow
       
-      let constraintW = self.widthAnchor.constraint(equalTo: margins.widthAnchor, multiplier: 0.7)
+      let constraintW = view.widthAnchor.constraint(equalTo: margins.widthAnchor, multiplier: 0.7)
       constraintW.isActive = true
       constraintW.priority = .defaultLow
       
-      let constraintH = self.heightAnchor.constraint(equalToConstant: 50)
+      let constraintH = view.heightAnchor.constraint(equalToConstant: 50)
       constraintH.isActive = true
       constraintH.priority = .defaultLow
     }
