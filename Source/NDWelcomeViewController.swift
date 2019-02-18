@@ -21,8 +21,6 @@ public class NDWelcomeViewController: UIViewController {
   
   var textColor = UIColor.black
   
-  var appName = "App Name"
-  
   public var details = [UIImage: (String, String)]()
   
   override public func viewDidLoad() {
@@ -61,7 +59,7 @@ public class NDWelcomeViewController: UIViewController {
     welcomeLabel.topAnchor.constraint(equalTo: titleLayoutGuide.topAnchor).isActive = true
     
     let nameLabel = UILabel(frame: .zero)
-    nameLabel.text = Bundle.main.infoDictionary![kCFBundleNameKey as String] as? String
+    nameLabel.text = Bundle.main.name!
     nameLabel.font = UIFont.systemFont(ofSize: 44, weight: .black)
     nameLabel.textColor = mainColor
     nameLabel.translatesAutoresizingMaskIntoConstraints = false
