@@ -9,28 +9,16 @@
 import UIKit
 
 public class NDWelcomeViewController: UIViewController {
-  var mainColor = UIColor.blue
-  var backgroundColor: UIColor {
-    set {
-      view.backgroundColor = newValue
-    }
-    get {
-      return view.backgroundColor ?? .white
-    }
-  }
-  
-  var textColor = UIColor.black
+  public var mainColor = UIColor.blue
+  public var backgroundColor: UIColor = UIColor.white
+  public var textColor = UIColor.black
+  public var buttonTextColor = UIColor.white
   
   public var details = [(UIImage, String, String)]()
   
-  override public func viewDidLoad() {
-    super.viewDidLoad()
-    
-    // Do any additional setup after loading the view.
-  }
-  
   override public func loadView() {
     super.loadView()
+    
     view.backgroundColor = backgroundColor
     
     let safeArea = view.safeAreaLayoutGuide
@@ -71,6 +59,7 @@ public class NDWelcomeViewController: UIViewController {
     let continueButton = UIButton(frame: .zero)
     
     continueButton.setTitle("Continue", for: .normal)
+    continueButton.setTitleColor(buttonTextColor, for: .normal)
     continueButton.backgroundColor = mainColor
     continueButton.layer.cornerRadius = 10
 
@@ -134,18 +123,15 @@ public class NDWelcomeViewController: UIViewController {
     }
   }
   
-  override public func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
-    UserDefaults.standard.set(true, forKey: "WelomeScreenShown")
-  }
-  
   public func presentIfNotSeen() {
     if !UserDefaults.standard.bool(forKey: "WelomeScreenShown") {
       let topWindow: UIWindow = UIWindow(frame: UIScreen.main.bounds)
       topWindow.rootViewController = UIViewController()
       topWindow.windowLevel = UIWindow.Level.alert + 1
       topWindow.makeKeyAndVisible()
-      topWindow.rootViewController?.present(self, animated: true, completion: nil)
+      topWindow.rootViewController?.present(self, animated: true, completion: {
+        UserDefaults.standard.set(true, forKey: "WelomeScreenShown")
+      })
     }
   }
 }
