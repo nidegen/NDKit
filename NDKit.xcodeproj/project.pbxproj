@@ -16,7 +16,7 @@
 		29D649EA2219CAD900527FB2 /* UIViewController+DismissAnimated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D649E92219CAD900527FB2 /* UIViewController+DismissAnimated.swift */; };
 		29D649EC2219D1B300527FB2 /* Bundle+Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D649EB2219D1B200527FB2 /* Bundle+Version.swift */; };
 		29ED7B0721E9F21F0094D65D /* NDKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 29ED7B0521E9F21F0094D65D /* NDKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		29ED7B0F21E9F2ED0094D65D /* UIAlertController+PresentInOverlayWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29ED7B0E21E9F2ED0094D65D /* UIAlertController+PresentInOverlayWindow.swift */; };
+		29ED7B0F21E9F2ED0094D65D /* UIViewController+PresentInOverlayWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29ED7B0E21E9F2ED0094D65D /* UIViewController+PresentInOverlayWindow.swift */; };
 		29ED7B1121E9F4B30094D65D /* UIView+addSubviewWIthLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29ED7B1021E9F4B30094D65D /* UIView+addSubviewWIthLayout.swift */; };
 		29ED7B1321E9F9E80094D65D /* UIView+attachView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29ED7B1221E9F9E80094D65D /* UIView+attachView.swift */; };
 		371F15B12204992E003DECCC /* UIImage+CVPixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371F15B02204992E003DECCC /* UIImage+CVPixelBuffer.swift */; };
@@ -59,7 +59,7 @@
 		29ED7B0221E9F21F0094D65D /* NDKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NDKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		29ED7B0521E9F21F0094D65D /* NDKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NDKit.h; sourceTree = "<group>"; };
 		29ED7B0621E9F21F0094D65D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		29ED7B0E21E9F2ED0094D65D /* UIAlertController+PresentInOverlayWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+PresentInOverlayWindow.swift"; sourceTree = "<group>"; };
+		29ED7B0E21E9F2ED0094D65D /* UIViewController+PresentInOverlayWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+PresentInOverlayWindow.swift"; sourceTree = "<group>"; };
 		29ED7B1021E9F4B30094D65D /* UIView+addSubviewWIthLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+addSubviewWIthLayout.swift"; sourceTree = "<group>"; };
 		29ED7B1221E9F9E80094D65D /* UIView+attachView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+attachView.swift"; sourceTree = "<group>"; };
 		371F15B02204992E003DECCC /* UIImage+CVPixelBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+CVPixelBuffer.swift"; sourceTree = "<group>"; };
@@ -126,7 +126,7 @@
 		29ED7B0D21E9F2350094D65D /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				29ED7B0E21E9F2ED0094D65D /* UIAlertController+PresentInOverlayWindow.swift */,
+				29ED7B0E21E9F2ED0094D65D /* UIViewController+PresentInOverlayWindow.swift */,
 				29ED7B1021E9F4B30094D65D /* UIView+addSubviewWIthLayout.swift */,
 				29ED7B1221E9F9E80094D65D /* UIView+attachView.swift */,
 				371F15B02204992E003DECCC /* UIImage+CVPixelBuffer.swift */,
@@ -264,7 +264,7 @@
 				29D649EA2219CAD900527FB2 /* UIViewController+DismissAnimated.swift in Sources */,
 				29ED7B1121E9F4B30094D65D /* UIView+addSubviewWIthLayout.swift in Sources */,
 				29D649EC2219D1B300527FB2 /* Bundle+Version.swift in Sources */,
-				29ED7B0F21E9F2ED0094D65D /* UIAlertController+PresentInOverlayWindow.swift in Sources */,
+				29ED7B0F21E9F2ED0094D65D /* UIViewController+PresentInOverlayWindow.swift in Sources */,
 				371F15B12204992E003DECCC /* UIImage+CVPixelBuffer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

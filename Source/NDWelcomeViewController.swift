@@ -136,11 +136,11 @@ public class NDWelcomeViewController: UIViewController {
   
   override public func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    UserDefaults.standard.set(true, forKey: "NDWelomeScreenShown")
+    UserDefaults.standard.set(true, forKey: "WelomeScreenShown")
   }
   
   public func presentIfNotSeen() {
-    if !UserDefaults.standard.bool(forKey: "NDWelomeScreenShown") {
+    if !UserDefaults.standard.bool(forKey: "WelomeScreenShown") {
       let topWindow: UIWindow = UIWindow(frame: UIScreen.main.bounds)
       topWindow.rootViewController = UIViewController()
       topWindow.windowLevel = UIWindow.Level.alert + 1

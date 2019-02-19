@@ -1,5 +1,5 @@
 //
-//  UIAlertController+PresentInOverlayWindow.swift
+//  UIViewController+PresentInOverlayWindow.swift
 //  NDKit
 //
 //  Created by Nicolas Degen on 12.01.19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UIAlertController {
+extension UIViewController {
   public func presentInOverlayWindow(animated: Bool = true, completion: (() -> ())? = nil) {
     let topWindow: UIWindow = UIWindow(frame: UIScreen.main.bounds)
     topWindow.rootViewController = UIViewController()
