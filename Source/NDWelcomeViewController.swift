@@ -21,7 +21,7 @@ public class NDWelcomeViewController: UIViewController {
   
   var textColor = UIColor.black
   
-  public var details = [UIImage: (String, String)]()
+  public var details = [(UIImage, String, String)]()
   
   override public func viewDidLoad() {
     super.viewDidLoad()
@@ -86,7 +86,7 @@ public class NDWelcomeViewController: UIViewController {
     var topAnchor = titleLayoutGuide.bottomAnchor
     var generalHeightAnchor: NSLayoutDimension?
     
-    for (image, (title, text)) in details {
+    for (image, title, text) in details {
       let detailView = UIView()
       detailView.translatesAutoresizingMaskIntoConstraints = false
       view.addSubview(detailView)
