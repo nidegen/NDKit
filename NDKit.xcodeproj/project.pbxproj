@@ -20,6 +20,7 @@
 		29ED7B1121E9F4B30094D65D /* UIView+addSubviewWIthLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29ED7B1021E9F4B30094D65D /* UIView+addSubviewWIthLayout.swift */; };
 		29ED7B1321E9F9E80094D65D /* UIView+attachView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29ED7B1221E9F9E80094D65D /* UIView+attachView.swift */; };
 		371F15B12204992E003DECCC /* UIImage+CVPixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371F15B02204992E003DECCC /* UIImage+CVPixelBuffer.swift */; };
+		37DE4FAD221F0A73009708AA /* AutoLayoutExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DE4FAC221F0A73009708AA /* AutoLayoutExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		29ED7B1021E9F4B30094D65D /* UIView+addSubviewWIthLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+addSubviewWIthLayout.swift"; sourceTree = "<group>"; };
 		29ED7B1221E9F9E80094D65D /* UIView+attachView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+attachView.swift"; sourceTree = "<group>"; };
 		371F15B02204992E003DECCC /* UIImage+CVPixelBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+CVPixelBuffer.swift"; sourceTree = "<group>"; };
+		37DE4FAC221F0A73009708AA /* AutoLayoutExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLayoutExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 				2959128B221722E60011EC2E /* NDWelcomeViewController.swift */,
 				29D649E92219CAD900527FB2 /* UIViewController+DismissAnimated.swift */,
 				29D649EB2219D1B200527FB2 /* Bundle+Version.swift */,
+				37DE4FAC221F0A73009708AA /* AutoLayoutExtensions.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			files = (
 				29ED7B1321E9F9E80094D65D /* UIView+attachView.swift in Sources */,
 				2959128C221722E60011EC2E /* NDWelcomeViewController.swift in Sources */,
+				37DE4FAD221F0A73009708AA /* AutoLayoutExtensions.swift in Sources */,
 				29D649EA2219CAD900527FB2 /* UIViewController+DismissAnimated.swift in Sources */,
 				29ED7B1121E9F4B30094D65D /* UIView+addSubviewWIthLayout.swift in Sources */,
 				29D649EC2219D1B300527FB2 /* Bundle+Version.swift in Sources */,
