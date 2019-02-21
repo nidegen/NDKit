@@ -13,7 +13,9 @@ public class NDWelcomeViewController: UIViewController {
   public var backgroundColor: UIColor = UIColor.white
   public var textColor = UIColor.black
   public var buttonTextColor = UIColor.white
-  
+  public let welcomeLabel = UILabel(frame: .zero)
+  public let nameLabel = UILabel(frame: .zero)
+    
   public var details = [(UIImage, String, String)]()
   
   override public func loadView() {
@@ -37,7 +39,6 @@ public class NDWelcomeViewController: UIViewController {
     titleLayoutGuide.topAnchor.constraint(equalTo: mainLayoutGuide.topAnchor).isActive = true
     titleLayoutGuide.centerXAnchor.constraint(equalTo: mainLayoutGuide.centerXAnchor).isActive = true
     
-    let welcomeLabel = UILabel(frame: .zero)
     welcomeLabel.text = "Welcome to"
     welcomeLabel.font = UIFont.systemFont(ofSize: 44, weight: .black)
     welcomeLabel.textColor = textColor
@@ -46,7 +47,6 @@ public class NDWelcomeViewController: UIViewController {
     welcomeLabel.leftAnchor.constraint(equalTo: titleLayoutGuide.leftAnchor).isActive = true
     welcomeLabel.topAnchor.constraint(equalTo: titleLayoutGuide.topAnchor).isActive = true
     
-    let nameLabel = UILabel(frame: .zero)
     nameLabel.text = Bundle.main.name!
     nameLabel.font = UIFont.systemFont(ofSize: 44, weight: .black)
     nameLabel.textColor = mainColor
@@ -57,8 +57,8 @@ public class NDWelcomeViewController: UIViewController {
     nameLabel.bottomAnchor.constraint(equalTo: titleLayoutGuide.bottomAnchor).isActive = true
     
     let continueButton = UIButton(frame: .zero)
-    
     continueButton.setTitle("Continue", for: .normal)
+    continueButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
     continueButton.setTitleColor(buttonTextColor, for: .normal)
     continueButton.backgroundColor = mainColor
     continueButton.layer.cornerRadius = 10
@@ -72,22 +72,38 @@ public class NDWelcomeViewController: UIViewController {
     continueButton.bottomAnchor.constraint(equalTo: mainLayoutGuide.bottomAnchor).isActive = true
     continueButton.addTarget(self, action: #selector(dismissAnimated), for: .touchDown)
     
-    var topAnchor = titleLayoutGuide.bottomAnchor
+    let detailsLayoutGuide = UILayoutGuide()
+    view.addLayoutGuide(detailsLayoutGuide)
+    detailsLayoutGuide.widthAnchor.constraint(equalTo: mainLayoutGuide.widthAnchor).isActive = true
+    detailsLayoutGuide.centerXAnchor.constraint(equalTo: mainLayoutGuide.centerXAnchor).isActive = true
+    detailsLayoutGuide.topAnchor.constraint(equalTo: titleLayoutGuide.bottomAnchor, constant: 60).isActive = true
+    detailsLayoutGuide.bottomAnchor.constraint(equalTo: continueButton.topAnchor, constant: -10).isActive = true
+    
+    var bottomAnchor = detailsLayoutGuide.topAnchor
     var generalHeightAnchor: NSLayoutDimension?
     
     for (image, title, text) in details {
       let detailView = UIView()
       detailView.translatesAutoresizingMaskIntoConstraints = false
       view.addSubview(detailView)
-      detailView.topAnchor.constraint(equalTo: topAnchor, constant: 30).isActive = true
+      detailView.topAnchor.constraint(equalTo: bottomAnchor).isActive = true
       if let heightAnchor = generalHeightAnchor {
         detailView.heightAnchor.constraint(equalTo: heightAnchor).isActive = true
       } else {
         generalHeightAnchor = detailView.heightAnchor
       }
-      detailView.widthAnchor.constraint(equalTo: mainLayoutGuide.widthAnchor).isActive = true
-      detailView.centerXAnchor.constraint(equalTo: mainLayoutGuide.centerXAnchor).isActive = true
-      topAnchor = detailView.bottomAnchor
+      detailView.widthAnchor.constraint(equalTo: detailsLayoutGuide.widthAnchor).isActive = true
+      detailView.centerXAnchor.constraint(equalTo: detailsLayoutGuide.centerXAnchor).isActive = true
+      
+      let spacing = UILayoutGuide()
+      view.addLayoutGuide(spacing)
+      spacing.widthAnchor.constraint(equalTo: detailsLayoutGuide.widthAnchor).isActive = true
+      spacing.centerXAnchor.constraint(equalTo: detailsLayoutGuide.centerXAnchor).isActive = true
+      spacing.topAnchor.constraint(equalTo: detailView.bottomAnchor, constant: 60).isActive = true
+      let spacingHeight = spacing.heightAnchor.constraint(equalToConstant: 10)
+      spacingHeight.isActive = true
+      spacingHeight.priority = .defaultLow
+      bottomAnchor = spacing.bottomAnchor
       
       let imageView = UIImageView(image: image)
       detailView.addSubview(imageView)
@@ -95,7 +111,7 @@ public class NDWelcomeViewController: UIViewController {
       imageView.leftAnchor.constraint(equalTo: detailView.leftAnchor, constant: 10).isActive = true
       imageView.heightAnchor.constraint(equalToConstant: 60).isActive = true
       imageView.widthAnchor.constraint(equalToConstant: 60).isActive = true
-      imageView.topAnchor.constraint(equalTo: detailView.topAnchor).isActive = true
+      imageView.centerYAnchor.constraint(equalTo: detailView.centerYAnchor).isActive = true
       imageView.contentMode = .scaleAspectFit
       
       let titleLabel = UILabel(frame: .zero)
@@ -120,6 +136,9 @@ public class NDWelcomeViewController: UIViewController {
       detailsLabel.textColor = textColor
       detailsLabel.lineBreakMode = .byWordWrapping
       detailsLabel.numberOfLines = 6
+    }
+    if details.count != 0 {
+      bottomAnchor.constraint(lessThanOrEqualTo: detailsLayoutGuide.bottomAnchor).isActive = true;
     }
   }
   
