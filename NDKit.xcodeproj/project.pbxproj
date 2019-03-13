@@ -12,19 +12,20 @@
 		29591283221720F90011EC2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29591282221720F90011EC2E /* Assets.xcassets */; };
 		29591286221720F90011EC2E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29591284221720F90011EC2E /* LaunchScreen.storyboard */; };
 		2959128C221722E60011EC2E /* NDWelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2959128B221722E60011EC2E /* NDWelcomeViewController.swift */; };
-		2959129122174E830011EC2E /* NDKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 29ED7B0221E9F21F0094D65D /* NDKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		29D649EA2219CAD900527FB2 /* UIViewController+DismissAnimated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D649E92219CAD900527FB2 /* UIViewController+DismissAnimated.swift */; };
 		29D649EC2219D1B300527FB2 /* Bundle+Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D649EB2219D1B200527FB2 /* Bundle+Version.swift */; };
 		29ED7B0721E9F21F0094D65D /* NDKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 29ED7B0521E9F21F0094D65D /* NDKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		29ED7B0F21E9F2ED0094D65D /* UIViewController+PresentInOverlayWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29ED7B0E21E9F2ED0094D65D /* UIViewController+PresentInOverlayWindow.swift */; };
 		29ED7B1121E9F4B30094D65D /* UIView+addSubviewWIthLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29ED7B1021E9F4B30094D65D /* UIView+addSubviewWIthLayout.swift */; };
 		29ED7B1321E9F9E80094D65D /* UIView+attachView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29ED7B1221E9F9E80094D65D /* UIView+attachView.swift */; };
+		29FC503F222BE948004DC389 /* NDKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29ED7B0221E9F21F0094D65D /* NDKit.framework */; };
+		29FC5040222BE948004DC389 /* NDKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 29ED7B0221E9F21F0094D65D /* NDKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		371F15B12204992E003DECCC /* UIImage+CVPixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371F15B02204992E003DECCC /* UIImage+CVPixelBuffer.swift */; };
 		37DE4FAD221F0A73009708AA /* AutoLayoutExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DE4FAC221F0A73009708AA /* AutoLayoutExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2959128D22174E6E0011EC2E /* PBXContainerItemProxy */ = {
+		29FC5041222BE948004DC389 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29ED7AF921E9F21E0094D65D /* Project object */;
 			proxyType = 1;
@@ -34,13 +35,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		2959129222174E830011EC2E /* Embed Frameworks */ = {
+		29FC5043222BE948004DC389 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				2959129122174E830011EC2E /* NDKit.framework in Embed Frameworks */,
+				29FC5040222BE948004DC389 /* NDKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -72,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29FC503F222BE948004DC389 /* NDKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,12 +163,12 @@
 				29591275221720F40011EC2E /* Sources */,
 				29591276221720F40011EC2E /* Frameworks */,
 				29591277221720F40011EC2E /* Resources */,
-				2959129222174E830011EC2E /* Embed Frameworks */,
+				29FC5043222BE948004DC389 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				2959128E22174E6E0011EC2E /* PBXTargetDependency */,
+				29FC5042222BE948004DC389 /* PBXTargetDependency */,
 			);
 			name = NiDemo;
 			productName = NiDemo;
@@ -276,10 +278,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2959128E22174E6E0011EC2E /* PBXTargetDependency */ = {
+		29FC5042222BE948004DC389 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 29ED7B0121E9F21F0094D65D /* NDKit */;
-			targetProxy = 2959128D22174E6E0011EC2E /* PBXContainerItemProxy */;
+			targetProxy = 29FC5041222BE948004DC389 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
