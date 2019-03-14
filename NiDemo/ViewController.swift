@@ -30,6 +30,20 @@ class ViewController: UIViewController {
     ndVC.details.append((UIImage(named: "Square")!, "Gimme Shelter:", "Love, sister, is just a kiss away. War, children, is just a shot away, shot away, shot away"))
     
     ndVC.presentInOverlayWindow()
+    
+//    let scrollView = UIScrollView(frame: .zero)
+//    view.addSubview(scrollView)
+//    scrollView.pinToSuperviewEdges()
+//
+//    let largeView = UIView(frame: .zero)
+//    largeView.backgroundColor = .blue
+//    scrollView.addSubview(largeView)
+//    largeView.translatesAutoresizingMaskIntoConstraints = false
+//    largeView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 30).isActive = true
+//    largeView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
+//    largeView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 2).isActive = true
+//    largeView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5).isActive = true
+//    largeView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
   }
 }
 
