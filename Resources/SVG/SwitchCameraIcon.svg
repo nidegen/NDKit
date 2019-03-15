@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="100"
+   height="100"
+   version="1.1"
+   id="svg4"
+   sodipodi:docname="SwitchCameraIcon.svg"
+   inkscape:version="0.92.2 5c3e80d, 2017-08-06">
+  <metadata
+     id="metadata10">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs8" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1420"
+     inkscape:window-height="863"
+     id="namedview6"
+     showgrid="true"
+     inkscape:zoom="5.6568542"
+     inkscape:cx="47.776132"
+     inkscape:cy="50.170242"
+     inkscape:window-x="75"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg4">
+    <inkscape:grid
+       type="xygrid"
+       id="grid4506" />
+  </sodipodi:namedview>
+  <path
+     id="path867"
+     d="m 89.416666,36.885417 v 36.473957 c 0,5.630208 -4.651043,10.526041 -10.526042,10.526041 H 21.609376 c -5.874999,0 -10.526042,-4.651041 -10.526042,-10.526041 V 36.640625 c 0,-5.630208 4.651043,-10.526041 10.526042,-10.526041 h 9.057291 L 32.625,20.484376 c 0.979167,-2.692708 4.161459,-4.895833 7.098959,-4.895833 h 21.052082 c 2.9375,0 6.119792,2.203125 7.098959,4.895833 l 1.958333,5.875 h 9.057291 c 5.874999,0 10.526042,4.651041 10.526042,10.526041 z"
+     inkscape:connector-curvature="0"
+     style="stroke-width:2.44791675"
+     sodipodi:nodetypes="sssssssccssccss" />
+  <g
+     id="g886"
+     transform="matrix(0.02154372,0,0,-0.02154372,24.141965,69.865167)"
+     style="fill:#ffffff;stroke:none">
+    <path
+       id="path884"
+       d="M 1250,1486 Q 1051,1486 878,1386 705,1288 604,1116 503,943 503,741 v -25 l 1,-26 -226,-15 -2,66 q -5,128 29,248 34,120 99,233 130,227 353,359 225,132 491,132 248,0 465,-119 l 217,232 57,-641 -679,-23 244,261 q -73,32 -148,47.5 -75,15.5 -154,15.5 z m 749,-700 225,15 1,-33 v -33 q 0,-261 -133,-488 -132,-228 -354,-356 -221,-127 -486,-127 -238,0 -462,118 L 572,-350 515,292 1194,314 950,53 Q 1023,21 1098.5,5.5 1174,-10 1252,-10 q 206,0 375,100 174,101 272,275 102,175 102,373 v 23 z"
+       inkscape:connector-curvature="0"
+       style="fill:#ffffff;stroke:none" />
+  </g>
+</svg>
