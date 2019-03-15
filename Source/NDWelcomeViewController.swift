@@ -23,26 +23,27 @@ public class NDWelcomeViewController: UIViewController {
     
     let safeArea = view.safeAreaLayoutGuide
     
-    let mainLayoutGuide = UILayoutGuide()
-    view.addLayoutGuide(mainLayoutGuide)
-    mainLayoutGuide.widthAnchor.constraint(equalTo: safeArea.widthAnchor, multiplier: 0.8).isActive = true
-    mainLayoutGuide.heightAnchor.constraint(equalTo: safeArea.heightAnchor, multiplier: 0.9).isActive = true
-    mainLayoutGuide.centerXAnchor.constraint(equalTo: safeArea.centerXAnchor).isActive = true
-    mainLayoutGuide.centerYAnchor.constraint(equalTo: safeArea.centerYAnchor).isActive = true
+    let scrollView = UIScrollView(frame: .zero)
+    scrollView.translatesAutoresizingMaskIntoConstraints = false
+    view.addSubview(scrollView)
+    scrollView.widthAnchor.constraint(equalTo: safeArea.widthAnchor, multiplier: 0.8).isActive = true
+    scrollView.centerXAnchor.constraint(equalTo: safeArea.centerXAnchor).isActive = true
+    scrollView.topAnchor.constraint(equalTo: safeArea.topAnchor).isActive = true
+    scrollView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -120).isActive = true
     
     let titleLayoutGuide = UILayoutGuide()
-    view.addLayoutGuide(titleLayoutGuide)
+    scrollView.addLayoutGuide(titleLayoutGuide)
     titleLayoutGuide.heightAnchor.constraint(equalToConstant: 100).isActive = true
-    titleLayoutGuide.widthAnchor.constraint(equalTo: mainLayoutGuide.widthAnchor).isActive = true
-    titleLayoutGuide.topAnchor.constraint(equalTo: mainLayoutGuide.topAnchor).isActive = true
-    titleLayoutGuide.centerXAnchor.constraint(equalTo: mainLayoutGuide.centerXAnchor).isActive = true
+    titleLayoutGuide.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
+    titleLayoutGuide.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
+    titleLayoutGuide.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
     
     let welcomeLabel = UILabel(frame: .zero)
     welcomeLabel.text = "Welcome to"
     welcomeLabel.font = UIFont.systemFont(ofSize: 44, weight: .black)
     welcomeLabel.textColor = textColor
     welcomeLabel.translatesAutoresizingMaskIntoConstraints = false
-    view.addSubview(welcomeLabel)
+    scrollView.addSubview(welcomeLabel)
     welcomeLabel.leftAnchor.constraint(equalTo: titleLayoutGuide.leftAnchor).isActive = true
     welcomeLabel.topAnchor.constraint(equalTo: titleLayoutGuide.topAnchor).isActive = true
     
@@ -51,7 +52,7 @@ public class NDWelcomeViewController: UIViewController {
     nameLabel.font = UIFont.systemFont(ofSize: 44, weight: .black)
     nameLabel.textColor = mainColor
     nameLabel.translatesAutoresizingMaskIntoConstraints = false
-    view.addSubview(nameLabel)
+    scrollView.addSubview(nameLabel)
     nameLabel.leftAnchor.constraint(equalTo: titleLayoutGuide.leftAnchor).isActive = true
     nameLabel.topAnchor.constraint(equalTo: welcomeLabel.bottomAnchor).isActive = true
     nameLabel.bottomAnchor.constraint(equalTo: titleLayoutGuide.bottomAnchor).isActive = true
@@ -66,28 +67,29 @@ public class NDWelcomeViewController: UIViewController {
     view.addSubview(continueButton)
     
     continueButton.translatesAutoresizingMaskIntoConstraints = false
-    continueButton.centerXAnchor.constraint(equalTo: mainLayoutGuide.centerXAnchor).isActive = true
+    continueButton.centerXAnchor.constraint(equalTo: safeArea.centerXAnchor).isActive = true
     continueButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
-    continueButton.widthAnchor.constraint(equalTo: mainLayoutGuide.widthAnchor).isActive = true
-    continueButton.bottomAnchor.constraint(equalTo: mainLayoutGuide.bottomAnchor).isActive = true
+    continueButton.widthAnchor.constraint(equalTo: safeArea.widthAnchor, multiplier: 0.8).isActive = true
+    continueButton.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -30).isActive = true
+    
     continueButton.addTarget(self, action: #selector(dismissAnimated), for: .touchDown)
     
-    var topAnchor = titleLayoutGuide.bottomAnchor
+    var previousBottomAnchor = titleLayoutGuide.bottomAnchor
     var generalHeightAnchor: NSLayoutDimension?
     
     for (image, title, text) in details {
       let detailView = UIView()
       detailView.translatesAutoresizingMaskIntoConstraints = false
-      view.addSubview(detailView)
-      detailView.topAnchor.constraint(equalTo: topAnchor, constant: 30).isActive = true
+      scrollView.addSubview(detailView)
+      detailView.topAnchor.constraint(equalTo: previousBottomAnchor, constant: 30).isActive = true
       if let heightAnchor = generalHeightAnchor {
         detailView.heightAnchor.constraint(equalTo: heightAnchor).isActive = true
       } else {
         generalHeightAnchor = detailView.heightAnchor
       }
-      detailView.widthAnchor.constraint(equalTo: mainLayoutGuide.widthAnchor).isActive = true
-      detailView.centerXAnchor.constraint(equalTo: mainLayoutGuide.centerXAnchor).isActive = true
-      topAnchor = detailView.bottomAnchor
+      detailView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
+      detailView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
+      previousBottomAnchor = detailView.bottomAnchor
       
       let imageView = UIImageView(image: image)
       detailView.addSubview(imageView)
@@ -121,6 +123,7 @@ public class NDWelcomeViewController: UIViewController {
       detailsLabel.lineBreakMode = .byWordWrapping
       detailsLabel.numberOfLines = 6
     }
+    previousBottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
   }
   
   public func presentIfNotSeen() {
