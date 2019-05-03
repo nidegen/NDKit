@@ -10,7 +10,7 @@ import Foundation
 
 extension Bundle {
   var releaseVersion: String? {
-    return infoDictionary?["CFBundleShortVersionString"] as? String
+    return infoDictionary?[kCFBundleVersionKey as String] as? String
   }
   
   var buildVersion: String? {
