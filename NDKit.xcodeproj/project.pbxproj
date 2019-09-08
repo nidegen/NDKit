@@ -27,6 +27,7 @@
 		372AF46B227C3B980090B25E /* AppStoreReviewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372AF46A227C3B980090B25E /* AppStoreReviewManager.swift */; };
 		372AF46D227C3E630090B25E /* UserDefaults+Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372AF46C227C3E630090B25E /* UserDefaults+Key.swift */; };
 		37361DA12268BFAE00519A4F /* TimeInterval+Units.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37361DA02268BFAE00519A4F /* TimeInterval+Units.swift */; };
+		37A34D3423250F7E00292EEB /* UIViewController+EmbedInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A34D3323250F7E00292EEB /* UIViewController+EmbedInView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		372AF46A227C3B980090B25E /* AppStoreReviewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreReviewManager.swift; sourceTree = "<group>"; };
 		372AF46C227C3E630090B25E /* UserDefaults+Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Key.swift"; sourceTree = "<group>"; };
 		37361DA02268BFAE00519A4F /* TimeInterval+Units.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Units.swift"; sourceTree = "<group>"; };
+		37A34D3323250F7E00292EEB /* UIViewController+EmbedInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+EmbedInView.swift"; sourceTree = "<group>"; };
 		37DE4FAC221F0A73009708AA /* AutoLayoutExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLayoutExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -142,12 +144,11 @@
 		29ED7B0D21E9F2350094D65D /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				29ED7B0E21E9F2ED0094D65D /* UIViewController+PresentInOverlayWindow.swift */,
+				37A34D3223250F3300292EEB /* UIViewController */,
 				29ED7B1021E9F4B30094D65D /* UIView+addSubviewWIthLayout.swift */,
 				29ED7B1221E9F9E80094D65D /* UIView+attachView.swift */,
 				371F15B02204992E003DECCC /* UIImage+CVPixelBuffer.swift */,
 				2959128B221722E60011EC2E /* NDWelcomeViewController.swift */,
-				29D649E92219CAD900527FB2 /* UIViewController+DismissAnimated.swift */,
 				29D649EB2219D1B200527FB2 /* Bundle+Version.swift */,
 				37DE4FAC221F0A73009708AA /* AutoLayoutExtensions.swift */,
 				3723170E223BB8C9007617A8 /* UIImage+NDKitIcons.swift */,
@@ -164,6 +165,16 @@
 				3714DBCE227B30C700B35AE6 /* Codextended.swift */,
 			);
 			name = "Third Party";
+			sourceTree = "<group>";
+		};
+		37A34D3223250F3300292EEB /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				29ED7B0E21E9F2ED0094D65D /* UIViewController+PresentInOverlayWindow.swift */,
+				29D649E92219CAD900527FB2 /* UIViewController+DismissAnimated.swift */,
+				37A34D3323250F7E00292EEB /* UIViewController+EmbedInView.swift */,
+			);
+			name = UIViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,6 +308,7 @@
 				372AF46D227C3E630090B25E /* UserDefaults+Key.swift in Sources */,
 				372AF46B227C3B980090B25E /* AppStoreReviewManager.swift in Sources */,
 				3714DBD0227B310D00B35AE6 /* Codextended.swift in Sources */,
+				37A34D3423250F7E00292EEB /* UIViewController+EmbedInView.swift in Sources */,
 				3714DBD2227B314A00B35AE6 /* AutoLayoutExtensions.swift in Sources */,
 				29ED7B1121E9F4B30094D65D /* UIView+addSubviewWIthLayout.swift in Sources */,
 				29D649EC2219D1B300527FB2 /* Bundle+Version.swift in Sources */,
