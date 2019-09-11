@@ -30,7 +30,7 @@ class ViewController: UIViewController {
     ndVC.details.append((UIImage(named: "Square")!, "Gimme Shelter:", "Love, sister, is just a kiss away. War, children, is just a shot away, shot away, shot away"))
     
     ndVC.presentInOverlayWindow()
-    AppStoreReviewManager.minimumReviewWorthyActionCount = 2
+    AppStoreReviewManager.minimumRatingWorthyActionCount = 2
     AppStoreReviewManager.askToWriteReview(forAppId: "id958625272")
     
 //    let scrollView = UIScrollView(frame: .zero)

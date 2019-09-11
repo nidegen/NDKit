@@ -10,9 +10,9 @@ import StoreKit
 
 // This file follow the tutorial from raywenderlich.com
 public enum AppStoreReviewManager {
-  public static var minimumReviewWorthyActionCount = 3
+  public static var minimumRatingWorthyActionCount = 3
   
-  public static func requestReviewIfAppropriate() {
+  public static func requestRatingIfAppropriate() {
     let defaults = UserDefaults.standard
     
     var actionCount = defaults.integer(forKey: .reviewWorthyActionCount)
@@ -21,12 +21,12 @@ public enum AppStoreReviewManager {
     
     defaults.set(actionCount, forKey: .reviewWorthyActionCount)
     
-    guard actionCount >= minimumReviewWorthyActionCount else {
+    guard actionCount >= minimumRatingWorthyActionCount else {
       return
     }
     
     let currentVersion = Bundle.main.releaseVersion
-    let lastVersion = defaults.string(forKey: .lastReviewRequestAppVersion)
+    let lastVersion = defaults.string(forKey: .lastRatingRequestAppVersion)
     
     guard lastVersion == nil || lastVersion != currentVersion else {
       return
@@ -35,11 +35,7 @@ public enum AppStoreReviewManager {
     SKStoreReviewController.requestReview()
     
     defaults.set(0, forKey: .reviewWorthyActionCount)
-    defaults.set(currentVersion, forKey: .lastReviewRequestAppVersion)
-  }
-  
-  public static func requstReviewIfLiked() {
-    
+    defaults.set(currentVersion, forKey: .lastRatingRequestAppVersion)
   }
   
   public static func askToWriteReview(forAppId appId: String) {

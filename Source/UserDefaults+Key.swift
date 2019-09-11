@@ -11,7 +11,7 @@ import Foundation
 extension UserDefaults {
   enum Key: String {
     case reviewWorthyActionCount
-    case lastReviewRequestAppVersion
+    case lastRatingRequestAppVersion
     case lastLaunchedVersion
   }
   
