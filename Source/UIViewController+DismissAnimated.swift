@@ -10,6 +10,14 @@ import UIKit
 
 extension UIViewController {
   @objc func dismissAnimated() {
-    self.dismiss(animated: true, completion: nil)
+    self.dismiss(animated: true)
+  }
+  
+  @objc func closeAnimated() {
+    if navigationController?.topViewController == self {
+      self.dismiss(animated: true)
+    } else {
+      navigationController?.popViewController(animated: true)
+    }
   }
 }
