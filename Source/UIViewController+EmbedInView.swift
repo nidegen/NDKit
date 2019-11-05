@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIViewController {
-    func embedInView(_ embeddingView: UIView, controlledBy parentVC: UIViewController) {
+    public func embedInView(_ embeddingView: UIView, controlledBy parentVC: UIViewController) {
         embeddingView.addSubview(view)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.widthAnchor.constraint(equalTo: embeddingView.widthAnchor).isActive = true

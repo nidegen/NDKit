@@ -9,11 +9,11 @@
 import UIKit
 
 extension UIViewController {
-  @objc func dismissAnimated() {
+  @objc public func dismissAnimated() {
     self.dismiss(animated: true)
   }
   
-  @objc func closeAnimated() {
+  @objc public func closeAnimated() {
     if navigationController?.topViewController == self {
       self.dismiss(animated: true)
     } else {
