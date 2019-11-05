@@ -6,7 +6,7 @@
 //  Copyright © 2019 Nicolas Degen. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 extension UIStoryboard {
   public convenience init(name: String) {
