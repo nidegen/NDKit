@@ -6,7 +6,7 @@
 //  Copyright © 2019 Nicolas Degen. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 extension UIImage {
   public func resized(withPercentage percentage: CGFloat) -> UIImage? {
