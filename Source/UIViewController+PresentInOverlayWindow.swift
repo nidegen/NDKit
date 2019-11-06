@@ -9,11 +9,12 @@
 import UIKit
 
 extension UIViewController {
-  public func presentInOverlayWindow(animated: Bool = true, completion: (() -> ())? = nil) {
+  @discardableResult public func presentInOverlayWindow(animated: Bool = true, completion: (() -> ())? = nil) -> UIWindow {
     let topWindow: UIWindow = UIWindow(frame: UIScreen.main.bounds)
     topWindow.rootViewController = UIViewController()
     topWindow.windowLevel = UIWindow.Level.alert + 1
     topWindow.makeKeyAndVisible()
     topWindow.rootViewController?.present(self, animated: animated, completion: completion)
+    return topWindow
   }
 }
