@@ -21,7 +21,17 @@ public class NDWelcomeViewController: UIViewController {
     
     view.backgroundColor = backgroundColor
     
-    let safeArea = view.safeAreaLayoutGuide
+    var safeArea: UILayoutGuide!
+    if #available(iOS 11.0, *) {
+        safeArea = view.safeAreaLayoutGuide
+    } else {
+        safeArea = UILayoutGuide()
+        view.addLayoutGuide(safeArea)
+        safeArea.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        safeArea.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        safeArea.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        safeArea.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+    }
     
     let mainLayoutGuide = UILayoutGuide()
     view.addLayoutGuide(mainLayoutGuide)
