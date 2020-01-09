@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UIViewController {
+public extension UIViewController {
   @objc func dismissAnimated() {
     self.dismiss(animated: true, completion: nil)
   }
