@@ -9,6 +9,7 @@
 import StoreKit
 
 // This file follow the tutorial from raywenderlich.com
+@available(iOS 10.3, *)
 public enum AppStoreReviewManager {
   public static var minimumReviewWorthyActionCount = 3
   
