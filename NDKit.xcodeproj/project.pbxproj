@@ -19,7 +19,6 @@
 		29ED7B0F21E9F2ED0094D65D /* UIViewController+PresentInOverlayWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29ED7B0E21E9F2ED0094D65D /* UIViewController+PresentInOverlayWindow.swift */; };
 		29ED7B1121E9F4B30094D65D /* UIView+addSubviewWIthLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29ED7B1021E9F4B30094D65D /* UIView+addSubviewWIthLayout.swift */; };
 		29ED7B1321E9F9E80094D65D /* UIView+attachView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29ED7B1221E9F9E80094D65D /* UIView+attachView.swift */; };
-		3714DBD0227B310D00B35AE6 /* Codextended.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3714DBCE227B30C700B35AE6 /* Codextended.swift */; };
 		3714DBD2227B314A00B35AE6 /* AutoLayoutExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DE4FAC221F0A73009708AA /* AutoLayoutExtensions.swift */; };
 		371F15B12204992E003DECCC /* UIImage+CVPixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371F15B02204992E003DECCC /* UIImage+CVPixelBuffer.swift */; };
 		372AF46B227C3B980090B25E /* AppStoreReviewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372AF46A227C3B980090B25E /* AppStoreReviewManager.swift */; };
@@ -70,7 +69,6 @@
 		29ED7B0E21E9F2ED0094D65D /* UIViewController+PresentInOverlayWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+PresentInOverlayWindow.swift"; sourceTree = "<group>"; };
 		29ED7B1021E9F4B30094D65D /* UIView+addSubviewWIthLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+addSubviewWIthLayout.swift"; sourceTree = "<group>"; };
 		29ED7B1221E9F9E80094D65D /* UIView+attachView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+attachView.swift"; sourceTree = "<group>"; };
-		3714DBCE227B30C700B35AE6 /* Codextended.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Codextended.swift; path = Submodules/Codextended/Sources/Codextended/Codextended.swift; sourceTree = "<group>"; };
 		371F15B02204992E003DECCC /* UIImage+CVPixelBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+CVPixelBuffer.swift"; sourceTree = "<group>"; };
 		372AF46A227C3B980090B25E /* AppStoreReviewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreReviewManager.swift; sourceTree = "<group>"; };
 		372AF46C227C3E630090B25E /* UserDefaults+Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Key.swift"; sourceTree = "<group>"; };
@@ -114,7 +112,6 @@
 		29ED7AF821E9F21E0094D65D = {
 			isa = PBXGroup;
 			children = (
-				372124E0227607B900B51FF2 /* Third Party */,
 				29ED7B0D21E9F2350094D65D /* Source */,
 				29ED7B0421E9F21F0094D65D /* Resources */,
 				2959127A221720F40011EC2E /* NiDemo */,
@@ -157,14 +154,6 @@
 				37BB8BDE232BE75C00C350B4 /* UIStoryboard+Init.swift */,
 			);
 			path = Source;
-			sourceTree = "<group>";
-		};
-		372124E0227607B900B51FF2 /* Third Party */ = {
-			isa = PBXGroup;
-			children = (
-				3714DBCE227B30C700B35AE6 /* Codextended.swift */,
-			);
-			name = "Third Party";
 			sourceTree = "<group>";
 		};
 		37A34D3223250F3300292EEB /* UIViewController */ = {
@@ -307,7 +296,6 @@
 				372AF46B227C3B980090B25E /* AppStoreReviewManager.swift in Sources */,
 				376ED3E3231D139E00DE3CB4 /* UIImage+Resize.swift in Sources */,
 				37BB8BDF232BE75C00C350B4 /* UIStoryboard+Init.swift in Sources */,
-				3714DBD0227B310D00B35AE6 /* Codextended.swift in Sources */,
 				37A34D3423250F7E00292EEB /* UIViewController+EmbedInView.swift in Sources */,
 				3714DBD2227B314A00B35AE6 /* AutoLayoutExtensions.swift in Sources */,
 				29ED7B1121E9F4B30094D65D /* UIView+addSubviewWIthLayout.swift in Sources */,
