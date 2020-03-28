@@ -1,6 +1,6 @@
 //
-//  ViewController.swift
-//  NiDemo
+//  DemoViewController.swift
+//  NDKit
 //
 //  Created by Nicolas Degen on 15.02.19.
 //  Copyright © 2019 Nicolas Degen. All rights reserved.
@@ -10,7 +10,7 @@ import UIKit
 
 import NDKit
 
-class ViewController: UIViewController {
+class DemoViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -48,4 +48,3 @@ class ViewController: UIViewController {
 //    largeView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
   }
 }
-
