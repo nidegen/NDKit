@@ -10,7 +10,7 @@ import SwiftUI
 import SwiftUIBlurView
 
 extension View {
-  public func rowIcon<V>(named: String, color: Color, @ViewBuilder _ content: () -> V) -> some View where V : View {
+  public func rowIcon(named: String, color: Color) -> some View {
     HStack {
       RowIcon(name: named, color: color)
       self
