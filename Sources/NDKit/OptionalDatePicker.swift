@@ -30,6 +30,7 @@ public struct OptionalDatePicker: UIViewRepresentable {
     } else {
       uiView.text = unsetText
     }
+    uiView.datePicker.date = date
   }
 }
 
