@@ -26,11 +26,11 @@ public struct OptionalDatePicker: UIViewRepresentable {
   
   public func updateUIView(_ uiView: DatePickerLabel, context: Context) {
     if let date = date {
+      uiView.datePicker.date = date
       uiView.text = DateFormatter.localizedString(from: date, dateStyle: .medium, timeStyle: .medium)
     } else {
       uiView.text = unsetText
     }
-    uiView.datePicker.date = date
   }
 }
 
