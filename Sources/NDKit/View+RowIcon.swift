@@ -23,7 +23,7 @@ public struct RowIcon: View {
   var name: String
   var color: Color
   
-  var body: some View {
+  public var body: some View {
     ZStack {
       RoundedRectangle(cornerRadius: 6)
         .fill(color)
