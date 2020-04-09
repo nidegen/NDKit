@@ -8,8 +8,6 @@
 
 import UIKit
 
-import NDKit
-
 class DemoViewController: UIViewController {
 
   override func viewDidLoad() {
