@@ -9,9 +9,14 @@
 import SwiftUI
 
 public struct OptionalDatePicker: UIViewRepresentable {
-  @Binding public var date: Date?
+  @Binding var date: Date?
   
-  public var unsetText: String?
+  var unsetText: String
+  
+  public init(date: Binding<Date?>, unsetText: String = "Date not set") {
+    self._date = date
+    self.unsetText = unsetText
+  }
   
   public func makeUIView(context: Context) -> DatePickerLabel {
     return DatePickerLabel { date in
@@ -23,7 +28,7 @@ public struct OptionalDatePicker: UIViewRepresentable {
     if let date = date {
       uiView.text = DateFormatter.localizedString(from: date, dateStyle: .medium, timeStyle: .medium)
     } else {
-      uiView.text = unsetText ?? "Date not set"
+      uiView.text = unsetText
     }
   }
 }
