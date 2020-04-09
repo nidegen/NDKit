@@ -9,9 +9,9 @@
 import SwiftUI
 
 public struct OptionalDatePicker: UIViewRepresentable {
-  @Binding var date: Date?
+  @Binding public var date: Date?
   
-  var unsetText: String?
+  public var unsetText: String?
   
   public func makeUIView(context: Context) -> DatePickerLabel {
     return DatePickerLabel { date in
