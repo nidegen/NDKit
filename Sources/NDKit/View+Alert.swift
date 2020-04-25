@@ -17,16 +17,37 @@ public struct AlertData {
     self.destructiveAction = destructiveAction
   }
   
-  public let title: String
-  public let message: String
-  public let destructiveText: String
-  public let destructiveAction: ()->()
+  public init(title: String, message: String, normalText: String, normalAction: @escaping () -> ()) {
+    self.title = title
+    self.message = message
+    self.normalText = normalText
+    self.normalAction = normalAction
+  }
+  
+  let title: String
+  let message: String
+  
+  var destructiveText: String?
+  var destructiveAction: (()->())?
+  
+  var normalText: String?
+  var normalAction: (()->())?
   
   public var alert: Alert {
-    Alert(title: Text(title),
-          message: Text(message),
-          primaryButton: .destructive(Text(destructiveText), action: destructiveAction),
-          secondaryButton: .cancel())
+    if let text = destructiveText, let action = destructiveAction {
+      return Alert(title: Text(title),
+                   message: Text(message),
+                   primaryButton: .destructive(Text(text), action: action),
+                   secondaryButton: .cancel())
+    } else if let text = normalText, let action = normalAction {
+      return Alert(title: Text(title),
+                   message: Text(message),
+                   primaryButton: .default(Text(text), action: action),
+                   secondaryButton: .cancel())
+    } else {
+      return Alert(title: Text(title),
+                   message: Text(message))
+    }
   }
 }
 
@@ -35,7 +56,7 @@ extension AlertData: Identifiable {
 }
 
 public extension View {
-  func alert(_ data: Binding<AlertData?>, content: (AlertData) -> Alert) -> some View {
+  func alert(_ data: Binding<AlertData?>) -> some View {
     self.alert(item: data) { data in
       data.alert
     }
