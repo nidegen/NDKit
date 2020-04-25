@@ -9,7 +9,7 @@
 import SwiftUI
 
 
-public struct AlertData {
+public struct AlertData: Identifiable {
   public init(title: String, message: String, destructiveText: String, destructiveAction: @escaping () -> ()) {
     self.title = title
     self.message = message
@@ -23,6 +23,8 @@ public struct AlertData {
     self.normalText = normalText
     self.normalAction = normalAction
   }
+  
+  public var id: String { title + message }
   
   let title: String
   let message: String
@@ -49,10 +51,6 @@ public struct AlertData {
                    message: Text(message))
     }
   }
-}
-
-extension AlertData: Identifiable {
-  public var id: String { title + message }
 }
 
 public extension View {
