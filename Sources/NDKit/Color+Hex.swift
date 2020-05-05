@@ -9,7 +9,7 @@
 import SwiftUI
 
 public extension Color {
-  public init(hex: Int, alpha: Double = 1) {
+  init(hex: Int, alpha: Double = 1) {
     let components = (
       R: Double((hex >> 16) & 0xff) / 255,
       G: Double((hex >> 08) & 0xff) / 255,

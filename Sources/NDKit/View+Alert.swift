@@ -9,25 +9,95 @@
 import SwiftUI
 
 
-public struct AlertData: Identifiable {
-  public init(title: String, message: String, destructiveText: String, destructiveAction: @escaping () -> ()) {
+public class BasicAlert: Identifiable  {
+  public init(title: String, message: String) {
     self.title = title
     self.message = message
+  }
+  
+  public let title: String
+  public let message: String
+  public var id: String { title + message }
+  
+  public var alert: Alert {
+    return Alert(title: Text(title),
+                 message: Text(message))
+  }
+}
+
+public class OptionAlert: BasicAlert {
+  public init(title: String, message: String,
+              textA: String, actionA: @escaping () -> (),
+              textB: String, actionB: @escaping () -> ()) {
+    self.textA = textA
+    self.actionA = actionA
+    self.textB = textB
+    self.actionB = actionB
+    super.init(title: title, message: message)
+  }
+  
+  public var textA: String
+  public var actionA: (()->())?
+  public var textB: String
+  public var actionB: (()->())?
+  
+  public override var alert: Alert {
+    return Alert(title: Text(title),
+                 message: Text(message),
+                 primaryButton: .default(Text(textA), action: actionA),
+                 secondaryButton: .default(Text(textB), action: actionB))
+  }
+}
+
+public class DestructiveAlert: BasicAlert {
+  public init(title: String, message: String, text: String, action: @escaping () -> ()) {
+    self.text = text
+    self.action = action
+    super.init(title: title, message: message)
+  }
+  
+  public var text: String
+  public var action: (()->())?
+  
+  public override var alert: Alert {
+    return Alert(title: Text(title),
+                 message: Text(message),
+                 primaryButton: .destructive(Text(text), action: action),
+                 secondaryButton: .cancel())
+  }
+}
+
+public class DefaultAlert: BasicAlert {
+  public init(title: String, message: String, text: String, action: @escaping () -> ()) {
+    self.text = text
+    self.action = action
+    super.init(title: title, message: message)
+  }
+  
+  public var text: String
+  public var action: (()->())?
+  
+  public override var alert: Alert {
+    return Alert(title: Text(title),
+                 message: Text(message),
+                 primaryButton: .default(Text(text), action: action),
+                 secondaryButton: .cancel())
+  }
+}
+
+@available(*, deprecated, message: "Use DefaultAlert or DestructiveAlert instead")
+public class AlertData: BasicAlert {
+  public init(title: String, message: String, destructiveText: String, destructiveAction: @escaping () -> ()) {
     self.destructiveText = destructiveText
     self.destructiveAction = destructiveAction
+    super.init(title: title, message: message)
   }
   
   public init(title: String, message: String, normalText: String, normalAction: @escaping () -> ()) {
-    self.title = title
-    self.message = message
     self.normalText = normalText
     self.normalAction = normalAction
+    super.init(title: title, message: message)
   }
-  
-  public var id: String { title + message }
-  
-  let title: String
-  let message: String
   
   var destructiveText: String?
   var destructiveAction: (()->())?
@@ -35,7 +105,7 @@ public struct AlertData: Identifiable {
   var normalText: String?
   var normalAction: (()->())?
   
-  public var alert: Alert {
+  public override var alert: Alert {
     if let text = destructiveText, let action = destructiveAction {
       return Alert(title: Text(title),
                    message: Text(message),
@@ -54,7 +124,7 @@ public struct AlertData: Identifiable {
 }
 
 public extension View {
-  func alert(_ data: Binding<AlertData?>) -> some View {
+  func alert<T: BasicAlert>(_ data: Binding<T?>) -> some View {
     self.alert(item: data) { data in
       data.alert
     }
