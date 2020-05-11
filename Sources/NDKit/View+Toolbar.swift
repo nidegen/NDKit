@@ -18,6 +18,7 @@ extension View {
         ZStack {
           if blur {
             BlurView(style: .systemChromeMaterial)
+              .allowsHitTesting(false)
           }
           HStack(content: content).padding(.horizontal)
         }
