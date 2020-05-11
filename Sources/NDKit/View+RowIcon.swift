@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SwiftUIBlurView
+import SwiftUIKit
 
 extension View {
   public func rowIcon(named: String, color: Color) -> some View {
