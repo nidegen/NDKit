@@ -2,12 +2,12 @@
   "object": {
     "pins": [
       {
-        "package": "SwiftUIBlurView",
-        "repositoryURL": "https://github.com/danielsaidi/SwiftUIBlurView.git",
+        "package": "SwiftUIKit",
+        "repositoryURL": "https://github.com/danielsaidi/SwiftUIKit.git",
         "state": {
           "branch": null,
-          "revision": "6a982028f14a549579af479d17b3417227fe98fb",
-          "version": "0.2.0"
+          "revision": "b62141cde41e9d10f37bf132f2b1e546702f92c5",
+          "version": "0.5.0"
         }
       }
     ]

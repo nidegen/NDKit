@@ -7,16 +7,18 @@
 //
 
 import SwiftUI
-import SwiftUIBlurView
+import SwiftUIKit
 
 extension View {
-  public func toolbar<V>(height: CGFloat = 40, @ViewBuilder _ content: () -> V) -> some View where V : View {
+  public func toolbar<V>(height: CGFloat = 40, blur: Bool = true, @ViewBuilder _ content: () -> V) -> some View where V : View {
     ZStack {
       self
       VStack {
         Spacer()
         ZStack {
-          BlurView(style: .systemChromeMaterial)
+          if blur {
+            BlurView(style: .systemChromeMaterial)
+          }
           HStack(content: content).padding(.horizontal)
         }
         .frame(height: height)
