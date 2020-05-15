@@ -9,7 +9,7 @@
 import SwiftUI
 
 
-public class BasicActionSheet: Identifiable  {
+public class ActionData: Identifiable  {
   public init(title: String, message: String? = nil, buttons: [ActionSheet.Button]) {
     self.title = title
     self.message = message
@@ -27,7 +27,7 @@ public class BasicActionSheet: Identifiable  {
 }
 
 public extension View {
-  func actionSheet<T: BasicActionSheet>(_ data: Binding<T?>) -> some View {
+  func actionSheet<T: ActionData>(_ data: Binding<T?>) -> some View {
     self.actionSheet(item: data){ data in
       data.sheet
     }
