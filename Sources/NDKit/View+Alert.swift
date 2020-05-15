@@ -3,7 +3,7 @@
 //  NDKit
 //
 //  Created by Nicolas Degen on 20.04.20.
-//  Copyright © 2019 Nicolas Degen. All rights reserved.
+//  Copyright © 2020 Nicolas Degen. All rights reserved.
 //
 
 import SwiftUI
