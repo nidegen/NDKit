@@ -1,14 +1,14 @@
 //
-//  DismissableNavigationView.swift
+//  View+Cancelable.swift
 //  NDKit
 //
-//  Created by Nicolas Degen on 07.05.20.
+//  Created by Nicolas Degen on 15.05.20.
 //  Copyright © 2020 Nicolas Degen. All rights reserved.
 //
 
 import SwiftUI
 
-public struct DismissableNavigationView<Content> : View where Content : View {
+public struct CancelableView<Content> : View where Content : View {
   let content: () -> Content
   
   @Environment(\.presentationMode) var presentationMode
@@ -17,20 +17,22 @@ public struct DismissableNavigationView<Content> : View where Content : View {
     self.content = content
   }
   
-  var trailingItem: some View {
-    Button("Done") {
+  var leadingItem: some View {
+    Button("Cancel") {
       self.presentationMode.wrappedValue.dismiss()
     }
   }
   
-  var leadingItem: some View {
-    EmptyView()
-  }
-  
   public var body: some View {
-    NavigationView {
-      content()
-        .navigationBarItems(leading: leadingItem, trailing: trailingItem)
+    content()
+      .navigationBarItems(leading: leadingItem)
+  }
+}
+
+extension View {
+  public func cancelable() -> some View {
+    CancelableView {
+      self
     }
   }
 }
