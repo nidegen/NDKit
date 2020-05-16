@@ -22,8 +22,8 @@ public struct DismissableView<Content> : View where Content : View {
   
   var trailingItem: some View {
     Button("Done") {
-      self.action?()
       self.presentationMode.wrappedValue.dismiss()
+      self.action?()
     }
   }
   
