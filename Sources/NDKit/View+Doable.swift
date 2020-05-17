@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-public struct DobleView<Content> : View where Content : View {
+public struct DoableView<Content> : View where Content : View {
   let content: () -> Content
   
   @Environment(\.presentationMode) var presentationMode
@@ -37,6 +37,14 @@ extension View {
   public func doable(action: (()->())? = nil) -> some View {
     DobleView(action: action) {
       self
+    }
+  }
+}
+
+public struct DoableModifier: ViewModifier {
+  public func body(content: Content) -> some View {
+    DoableView {
+      content
     }
   }
 }

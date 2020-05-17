@@ -36,3 +36,11 @@ extension View {
     }
   }
 }
+
+public struct CancelableModifier: ViewModifier {
+  public func body(content: Content) -> some View {
+    CancelableView {
+      content
+    }
+  }
+}

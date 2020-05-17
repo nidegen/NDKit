@@ -46,3 +46,11 @@ extension View {
     }
   }
 }
+
+public struct DismissableModifier: ViewModifier {
+  public func body(content: Content) -> some View {
+    DismissableView {
+      content
+    }
+  }
+}
