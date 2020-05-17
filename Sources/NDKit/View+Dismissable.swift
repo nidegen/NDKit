@@ -48,8 +48,14 @@ extension View {
 }
 
 public struct DismissableModifier: ViewModifier {
+  var action: (()->())?
+  
+  public init(action: (()->())? = nil) {
+    self.action = action
+  }
+  
   public func body(content: Content) -> some View {
-    DismissableView {
+    DismissableView(action: action) {
       content
     }
   }

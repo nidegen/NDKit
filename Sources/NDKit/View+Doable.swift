@@ -35,15 +35,21 @@ public struct DoableView<Content> : View where Content : View {
 
 extension View {
   public func doable(action: (()->())? = nil) -> some View {
-    DobleView(action: action) {
+    DoableView(action: action) {
       self
     }
   }
 }
 
 public struct DoableModifier: ViewModifier {
+  var action: (()->())?
+  
+  public init(action: (()->())? = nil) {
+    self.action = action
+  }
+  
   public func body(content: Content) -> some View {
-    DoableView {
+    DoableView(action: action) {
       content
     }
   }
