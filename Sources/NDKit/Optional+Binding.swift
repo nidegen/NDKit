@@ -8,19 +8,21 @@
 
 import SwiftUI
 
-public extension Optional {
-  mutating func getExistanceBinding(withDefaultInitialization defaultValue: Wrapped) -> Binding<Bool> {
-    return Binding(get: { [weak self] in
-      self != nil
-    }) { [weak self] shouldExist in
-      if shouldExist && self.isNil {
-        self = defaultValue
-      } else if !shouldExist && !self.isNil {
-        self = nil
+public extension Binding {
+  func getExistancBinding<T>(withDefaultInitialization defaultValue: T) -> Binding<Bool> where Value == T? {
+    return Binding<Bool>(get: {
+      self.wrappedValue != nil
+    }) { shouldExist in
+      if shouldExist && self.wrappedValue.isNil {
+        self.wrappedValue = defaultValue
+      } else if !shouldExist && !self.wrappedValue.isNil {
+        self.wrappedValue = nil
       }
     }
   }
-  
+}
+
+public extension Optional {
   var isNil: Bool {
     return self == nil
   }
