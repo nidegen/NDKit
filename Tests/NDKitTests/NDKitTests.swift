@@ -12,8 +12,7 @@ final class NDKitTests: XCTestCase {
   func testOptionalArray() {
     var optionalArray: [Int]?
     optionalArray.append(3)
-    optionalArray.
-    XCTAssert(optionalArray?.count == 1)
+    XCTAssert(optionalArray.count == 1)
   }
   
   static var allTests = [
