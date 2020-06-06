@@ -27,3 +27,17 @@ public extension Optional {
     return self == nil
   }
 }
+
+public extension Optional {
+  mutating func get(
+    orSet expression: @autoclosure () -> Wrapped
+  ) -> Wrapped {
+    guard let view = self else {
+      let new = expression()
+      self = new
+      return new
+    }
+    
+    return view
+  }
+}
