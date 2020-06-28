@@ -9,6 +9,7 @@
 import Foundation
 
 public extension TimeInterval {
+  static var second: TimeInterval = 1
   static var minute: TimeInterval = 60
   static var hour: TimeInterval = 60 * 60
   static var day: TimeInterval = 60 * 60 * 24
