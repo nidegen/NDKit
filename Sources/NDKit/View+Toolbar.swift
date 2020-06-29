@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-import SwiftUIKit
 
 extension View {
   public func toolbar<V>(height: CGFloat = 40, blur: Bool = true, @ViewBuilder _ content: () -> V) -> some View where V : View {
